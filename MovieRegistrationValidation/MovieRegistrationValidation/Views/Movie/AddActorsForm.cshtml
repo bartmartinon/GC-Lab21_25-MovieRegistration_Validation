@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "AddActorsForm";
+}
+@model Movie
+
+<h1>Add Actors Form</h1>
+<h4>Current Movie Information:</h4>
+<p>     <b>ID</b>: @Model.ID</p>
+<p>  <b>Title</b>: @Model.Title</p>
+<p>  <b>Genre</b>: @Model.Genre</p>
+
+<h4>You will now need to add Actors.</h4>
+<p>For every actor that you wish to add, fill the text box below and then click <b>Add</b>.</p>
+<p>Once you believe that you are finished and ready to move on to the next step, click <b>Proceed</b>.</p>
+
+<form action="AddActorsFormStep" method="post">
+    Actor: <input type="text" name="FirstName" value="FirstName" required /> 
+    <input type="text" name="LastName" value="LastName" required /> 
+    <input type="submit" name="command" value="Add" /><br />
+    <input type="submit" name="command" value="Proceed" />
+</form>
+

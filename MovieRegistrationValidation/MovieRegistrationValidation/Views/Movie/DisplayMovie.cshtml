@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "DisplayMovie";
+}
+@model Movie
+
+<h1>DisplayMovie</h1>
+<h4>Confirmed Movie Information:</h4>
+<p>     <b>ID</b>: @Model.ID</p>
+<p>  <b>Title</b>: @Model.Title</p>
+<p>  <b>Genre</b>: @Model.Genre</p>
+<p>  <b>Year</b>: @Model.Year</p>
+<p>  <b>Actors</b>:</p>
+@foreach (string actor in Model.Actors)
+{
+    <p>    @actor</p>
+}
+<p>  <b>Directors</b>:</p>
+@foreach (string director in Model.Directors)
+{
+    <p>    @director</p>
+}
+<h4>Success!</h4>
+<p>@Model.Title + has been registered!</p>

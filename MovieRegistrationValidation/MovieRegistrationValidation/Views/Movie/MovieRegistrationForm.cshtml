@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "MovieRegistrationForm";
+}
+@model Movie
+
+<h1>Movie Registration Form</h1>
+<h4>Fill out the information below. Click Proceed to move on to add Actors to this new entry.</h4>
+
+@Html.ValidationSummary()
+
+<form action="DisplayMovie" method="post">
+    @Html.LabelFor(m => m.ID)
+    *: <input type="text" name="ID" value="@Model.ID" required /><br />
+    @Html.LabelFor(m => m.Title)
+    *: <input type="text" name="Title" value="@Model.Title" required /><br />
+    @Html.LabelFor(m => m.Genre)
+    *: <input type="text" name="Genre" value="@Model.Genre" required /><br />
+    @Html.LabelFor(m => m.Year)
+    *: <input type="number" name="Year" value="@Model.Year" min="1900" max="@DateTime.Now.Year" required /><br />
+    @Html.LabelFor(m => m.Actors)<br />
+    1*: <input type="text" name="Actors" value="Actor1" required /> <br />
+    2: <input type="text" name="Actors" value="Actor2" /> <br />
+    3: <input type="text" name="Actors" value="Actor3" /> <br />
+    @Html.LabelFor(m => m.Directors)<br />
+    1*: <input type="text" name="Directors" value="Director1" required /> <br />
+    2: <input type="text" name="Directors" value="Director2" /> <br />
+    3: <input type="text" name="Directors" value="Director3" /> <br />
+    <input type="submit" value="Proceed" />
+</form>
