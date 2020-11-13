@@ -7,24 +7,29 @@
 <h1>Movie Registration Form</h1>
 <h4>Fill out the information below. Click Proceed to move on to add Actors to this new entry.</h4>
 
-@Html.ValidationSummary()
-
 <form action="DisplayMovie" method="post">
     @Html.LabelFor(m => m.ID)
-    *: <input type="text" name="ID" value="@Model.ID" required /><br />
+    *: <input type="text" name="ID" value="@Model.ID" required />@Html.ValidationMessageFor(m => m.ID, "", new { @style = "color:red; font-weight: bold;" })<br />
     @Html.LabelFor(m => m.Title)
-    *: <input type="text" name="Title" value="@Model.Title" required /><br />
+    *: <input type="text" name="Title" value="@Model.Title" required />@Html.ValidationMessageFor(m => m.Title, "", new { @style = "color:red; font-weight: bold;" })<br />
     @Html.LabelFor(m => m.Genre)
-    *: <input type="text" name="Genre" value="@Model.Genre" required /><br />
+    : <br />
+    <input type="radio" name="Genre" value="Action" checked />Action<br />
+    <input type="radio" name="Genre" value="Horror" />Horror<br />
+    <input type="radio" name="Genre" value="Drama" />Drama<br />
+    <input type="radio" name="Genre" value="Biography" />Biography<br />
+    <input type="radio" name="Genre" value="Sci-Fi" />Sci-Fi<br />
+    <input type="radio" name="Genre" value="Animated" />Animated<br />
+    <br />
     @Html.LabelFor(m => m.Year)
-    *: <input type="number" name="Year" value="@Model.Year" min="1900" max="@DateTime.Now.Year" required /><br />
+    *: <input type="number" name="Year" value="@Model.Year" min="1880" max="@DateTime.Now.Year" required /><br />
     @Html.LabelFor(m => m.Actors)<br />
-    1*: <input type="text" name="Actors" value="Actor1" required /> <br />
-    2: <input type="text" name="Actors" value="Actor2" /> <br />
-    3: <input type="text" name="Actors" value="Actor3" /> <br />
+    1*: <input type="text" name="Actors" value="" required /> <br />
+    2: <input type="text" name="Actors" value="" /> <br />
+    3: <input type="text" name="Actors" value="" /> <br />
     @Html.LabelFor(m => m.Directors)<br />
-    1*: <input type="text" name="Directors" value="Director1" required /> <br />
-    2: <input type="text" name="Directors" value="Director2" /> <br />
-    3: <input type="text" name="Directors" value="Director3" /> <br />
+    1*: <input type="text" name="Directors" value="" required /> <br />
+    2: <input type="text" name="Directors" value="" /> <br />
+    3: <input type="text" name="Directors" value="" /> <br />
     <input type="submit" value="Proceed" />
 </form>
